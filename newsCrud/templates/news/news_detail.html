@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>News Detail</h1>
+    <div class="jumbotron">
+        <p> Title: {{news.title}}</p>
+        <p> Published: {{news.pubDate}}</p>
+        <p> Description :{{news.description}}</p>
+        <p> Link : <a href='{{news.link}}'>  {{news.link}} </p>
+      
+        <hr class="my-4">
+        <a class="btn btn-primary btn-sm" href="{% url 'news_list' %}" role="button">Back</a>
+    </div>
+{% endblock %}

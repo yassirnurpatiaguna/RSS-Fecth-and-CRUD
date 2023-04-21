@@ -1,0 +1,16 @@
+asgiref==3.6.0
+certifi==2022.12.7
+charset-normalizer==3.1.0
+crispy-bootstrap4==2022.1
+Django==3.2.18
+django-crispy-forms==2.0
+feedparser==6.0.10
+idna==3.4
+mysql-connector==2.2.9
+mysqlclient @ file:///C:/Users/yassi/Downloads/mysqlclient-1.4.0-cp37-cp37m-win_amd64.whl
+pytz==2023.2
+sgmllib3k==1.0.0
+soupsieve==2.4
+sqlparse==0.4.3
+typing_extensions==4.5.0
+urllib3==1.26.15

@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>List</h1>
+    <a class="btn btn-primary mb-2" href="{% url 'news_create' %}" role="button">Create News</a>
+    <a class="btn btn-danger mb-2"href="{% url 'logout' %}" role="button">Logout</a>
+ 
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Published</th>
+                <th scope="col">Description</th>
+                <th scope="col">Link</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for news in newsList %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{news.title}}</td>
+                    <td>{{news.pubDate }}</td>
+                    <td>{{news.description }}</td>
+                    <td>{{news.link }}</td>
+                    <td>
+                        <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Chose Action
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{% url 'news_detail' news.id %}">Detail</a>
+                                    <a class="dropdown-item" href="{% url 'news_update'  news.id %}">Edit</a>
+                                    <a class="dropdown-item" href="{% url 'news_delete'  news.id %}">Delete</a>
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
